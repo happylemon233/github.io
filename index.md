@@ -1,37 +1,248 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/happylemon233/github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<!DOCTYPE html>
+<html lang="zh">
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>请假外出、返校权限查询通行码</title>
 
-### Markdown
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #eeeeee;
+            font-size: 0.9rem;
+        }
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+        .topic {
+            width: 94vw;
+            height: 7vh;
+            font-size: 12px;
+            line-height: 7vh;
+            margin-top: 2vh;
+            font-family: PingFang SC;
+            color: #333;
+            padding-left: 3vw;
+            background-color: white;
+            font-weight: bold;
+        }
 
-```markdown
-Syntax highlighted code block
+        .topic img {
+            width: 2vh;
+            height: 2vh;
+            margin-right: 1vw;
+            transform: translateY(10%);
+        }
 
-# Header 1
-## Header 2
-### Header 3
+        .info-title {
+            color: #888;
+            margin-left: 3vw;
+            margin-top: 2vw;
+            margin-bottom: 2vw;
+        }
 
-- Bulleted
-- List
+        .info-text {
+            width: 100vw;
+            height: 8vh;
+            color: #76777a;
+            line-height: 8vh;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .info-flash {
+            width: 100vw;
+            height: 8vh;
+            color: #76777a;
+            line-height: 8vh;
+            background-color: white;
+            text-align: center;
+            padding-top: 3%;
+            padding-bottom: 1%;
 
-1. Numbered
-2. List
+        }
+        .info-flash img {
+            width: 90vw;
+            height: 10vw;
+        }
 
-**Bold** and _Italic_ and `Code` text
+        .photo-img {
+            /*width: 100vw;
+            height: 10vw;*/
+            color: #76777a;
+            background-color: white;
+            text-align: center;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
 
-[Link](url) and ![Image](src)
-```
+        .QR-code {
+            width: 100vw;
+            color: #76777a;
+            background-color: white;
+            text-align: center;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+        .QR-code img {
+            width: 40vw;
+            height: 40vw;
+        }
 
-### Jekyll Themes
+        .permit {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #01bb00;
+        }
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/happylemon233/github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+        .info-last {
+            margin-bottom: 12vh;
+        }
 
-### Support or Contact
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            padding-left: 2vw;
+            padding-top: 4vw;
+            padding-bottom: 2vw;
+            width: 100vw;
+            height: 6.5vh;
+            background-color: white;
+        }
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+        .gengduo {
+            width: 30vw;
+            height: 6vh;
+            border: 1px solid #5383ec;
+            border-radius: 50px;
+            color: #5383ec;
+            text-align: center;
+            line-height: 6vh;
+        }
+
+        .input-box {
+            width: 80vw;
+            /* height: 40vh;
+            margin-top: 20vh;
+            margin-left: 10vw;
+            margin-bottom: 5vh; */
+            margin: 0 auto;
+            border: 5px solid #5383ec;
+            border-radius: 50px;
+            font-size: 1.0rem;
+        }
+
+        .input-box div {
+            /* width: 60vw; */
+            height: 5vh;
+            /* margin: 0 auto; */
+            /* text-align: center; */
+        }
+
+        button {
+            margin-right: 2vw;
+        }
+    </style>
+</head>
+
+<body onload="Enter(0)">
+
+    <div class="content" id="content">
+        <div class="topic">
+            <div><img src='https://s3.bmp.ovh/imgs/2021/10/27c7be9415824eba.jpg' />当前部门：信息与通信工程学院</div>
+
+        </div>
+        <div class="topic">
+            <div><img src='https://i.bmp.ovh/imgs/2020/09/04d93329ad7c7ab4.png' />请假外出、返校权限查询</div>
+        </div>
+        <div class="infos">
+            <div class="info">
+                <div class="info-title">姓名</div>
+                <div class="info-text" id="info-name">康洁</div>
+            </div>
+            <div class="info">
+                <div class="info-title">照片</div>
+                <div class="photo-img"><img src='https://imgservice.bupt.edu.cn/image/1895/3790282.jpg' height="110" width="85" /></div>
+            </div>
+            <div class="info">
+                <div class="info-title"></div>
+                <div class="info-flash" id="info-flash" ><img src='https://imgservice.bupt.edu.cn/image/1958/3916676.gif' width="200px" height="30px"/></div>
+            <div class="info">
+                <div class="info-title">状态码</div>
+                <div class="QR-code"><img src='https://i.bmp.ovh/imgs/2020/09/e7f5c9eb667fb424.png' /></div>
+            </div>
+            <div class="info">
+                <div class="info-title">状态</div>
+                <div class="info-text permit" id="status">允许出校</div>
+            </div>
+            <div class="info">
+                <div class="info-title">学工号</div>
+                <div class="info-text" id="info-number">2019140066</div>
+            </div>
+            <div class="info">
+                <div class="info-title">出入校时间</div>
+                <div class="info-text" id="time">2020-09-06 09:16:04</div>
+            </div>
+            <div class="info info-last">
+                <div class="info-title">学院</div>
+                <div class="info-text" id="info-aca">信息与通信工程学院</div>
+            </div>
+        </div>
+        <!-- footer使用固定布局 -->
+        <div class="footer">
+            <div class="gengduo" onclick="Enter(1)">更多</div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function curDateTime() {
+            var d = new Date();
+            var year = d.getYear();
+            var month = d.getMonth() + 1;
+            var date = d.getDate();
+            var day = d.getDay();
+            var hours = d.getHours();
+            var minutes = d.getMinutes();
+            var seconds = d.getSeconds();
+            var ms = d.getMilliseconds();
+            var curDateTime = String(1900 + parseInt(year));
+            if (month > 9)
+                curDateTime = curDateTime + "-" + month;
+            else
+                curDateTime = curDateTime + "-0" + month;
+            if (date > 9)
+                curDateTime = curDateTime + "-" + date;
+            else
+                curDateTime = curDateTime + "-0" + date;
+            if (hours > 9)
+                curDateTime = curDateTime + "\xa0" + hours;
+            else
+                curDateTime = curDateTime + "0" + hours;
+            if (minutes > 9)
+                curDateTime = curDateTime + ":" + minutes;
+            else
+                curDateTime = curDateTime + ":0" + minutes;
+            if (seconds > 9)
+                curDateTime = curDateTime + ":" + seconds;
+            else
+                curDateTime = curDateTime + ":0" + seconds;
+            return curDateTime;
+        };
+        curTime = curDateTime();
+
+        function Enter(e) {
+            
+            document.getElementById("content").style.display = "";
+            var status = ['允许出校', '允许入校'];
+        
+            document.getElementById("status").innerHTML = status[parseInt(e)];
+            document.getElementById("time").innerHTML = curTime;
+        }
+    </script>
+</body>
+
+</html>
